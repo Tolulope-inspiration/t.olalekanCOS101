@@ -5,6 +5,6 @@ fn main() {
 	let n: f64 = 3.00;
 
 	let amount = p * (1.0 - (r/100.00)).powf(n);
-	println!("The amount is N{}", amount);
-	
+	println!("The value of the TV after 3 years is N{}", amount);
+
 }
