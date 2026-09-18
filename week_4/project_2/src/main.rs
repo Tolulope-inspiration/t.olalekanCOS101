@@ -24,7 +24,8 @@ fn main() {
     }
     else if a == "no"{
         println!("You are not experienced");
-        println!("This is the annual incentive for your experience: N100_000.0");
+        println!("This is the annual incentive for your experience: N100,000");
+        return;
     }
     else {
         println!("Dear user type either yes or no");
@@ -43,13 +44,13 @@ fn main() {
 
     // Conditions statement for 'b' and the corresponding output
     if b >= 40.0{
-        println!("This is the annual incentive for your experience: N1_560_000.0");
+        println!("This is the annual incentive for your experience: N1,560,000");
     }
     else if b >= 29.0 && b <=39.0{
-        println!("This is the annual incentive for your experience: N1_480_000.0");
+        println!("This is the annual incentive for your experience: N1,480,000");
     }
     else if b >= 1.0 && b <= 28.0{
-        println!("This is the annual incentive for your experience: N1_300_000.0");
+        println!("This is the annual incentive for your experience: N1,300,000");
     }
     else if b <= 0.0{
         println!("Please enter a valid age.");
