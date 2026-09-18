@@ -1,9 +1,9 @@
-// The Incentive Calculator
+// Rust program - The Incentive Calculator
 
 use std::io;
 
 fn main() {
-
+    // Collecting input from user
     let mut input1 = String::new();
     let mut input2 = String::new();
 
@@ -11,11 +11,14 @@ fn main() {
     println!("Type in yes or no");
     println!("Are you experienced? ");
 
+    // Read the user's response, remove the extra spaces, and store the cleaned input in the variable 'a'.
     io::stdin()
         .read_line(&mut input1)
         .expect("Failed to read input");
     let a:&str = input1.trim();
 
+
+    // Conditions for the input of 'a'
     if a == "yes"{
         println!("You are experienced, that is very good.");
     }
@@ -23,14 +26,22 @@ fn main() {
         println!("You are not experienced");
         println!("This is the annual incentive for your experience: N100_000.0");
     }
+    else {
+        println!("Dear user type either yes or no");
+        return;
+    }
     
+    
+    // Second question to ask the user
     println!("Dear employee enter your age: ");
 
+    // Read the user's response, remove the extra spaces, and store the cleaned input in the variable 'b'.
     io::stdin()
         .read_line(&mut input2)
         .expect("Failed to read input");
     let b:f32 = input2.trim().parse().expect("Please type in a valid age");
 
+    // Conditions statement for 'b' and the corresponding output
     if b >= 40.0{
         println!("This is the annual incentive for your experience: N1_560_000.0");
     }
