@@ -16,9 +16,6 @@ fn main() {
     if age >= 18{
         println!("Welcome to the party{input1}!");
     }
-    else if age < 0{
-        println!("Please enter a valid age");
-    }
     else {
         println!("Oops, you are not of age to enter the party {input1}");
 

@@ -8,6 +8,6 @@ fn main() {
         }
         count += 1;
     }
-    println!("The count of values greater that 10 (between 1 and 20) is: {count}");
+    println!("The count of values greater than 10 (between 1 and 20) is: {count}");
     //outputs 10
 }
