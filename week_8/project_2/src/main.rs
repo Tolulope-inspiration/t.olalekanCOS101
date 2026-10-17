@@ -62,29 +62,30 @@ fn main() {
             break;
         }
         
+    }
 
-        //I used the for loop to go through each of the applicants and display their information
-        for applicants in &applicants{
-            println!("\nName: {} {}\nExperience: {}years",applicants.0.trim(),applicants.1.trim(),applicants.2);
-            println!("Thank you for applying 👋\n");
-        }
+    //I used the for loop to go through each of the applicants and display their information
+    for applicants in &applicants{
+        println!("\nName: {} {}\nExperience: {}years",applicants.0.trim(),applicants.1.trim(),applicants.2);
+        println!("Thank you for applying 👋\n");
+    }
 
-        // This condition here is to display the person with highest years of experience
-        if !applicants.is_empty() {
-            let mut highest = &applicants[0];
+    // This condition here is to display the person with highest years of experience
+    if !applicants.is_empty() {
+        let mut highest = &applicants[0];
 
-            for applicants in &applicants {
-                if applicants.2 > highest.2 {
-                    highest = applicants;
-                }
+        for applicants in &applicants {
+            if applicants.2 > highest.2 {
+                highest = applicants;
             }
-            
-            println!("\nApplicant with the highest experience:");
-            println!("Name: {} {}", highest.1, highest.0);
-            println!("Experience: {} years", highest.2);
         }
-        else{
-            println!("No valid applicants were added");
-        }
-    }   
+        
+        println!("\nApplicant with the highest experience:");
+        println!("Name: {} {}", highest.1, highest.0);
+        println!("Experience: {} years", highest.2);
+    }
+    else{
+        println!("No valid applicants were added");
+    }
+
 }
