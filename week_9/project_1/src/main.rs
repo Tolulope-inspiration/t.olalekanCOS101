@@ -1,22 +1,36 @@
-use std::io::Write;      // This allows me to use the method of writing to my file
+use std::fs::File;
+use std::io::Write;
 
+fn main() {
+    println!("==============================");
+    println!("WELCOME TO THE PAU-SIMS PORTAL");
+    println!("==============================");
 
-// Here I am writing the contents of my file and storing them to a variable 'drinks'
-fn main(){ 
-    let drinks = "LAGER, STOUT, NON-ALCOHOLIC
-    33 Export, Legend, Maltina
-    Desperados, Turbo King, Amstel Malta
-    Goldberg, Williams, Malta Gold
-    Gulder, ,Fayrouz
-    Heineken, ,
-    Stars, ,";
+    let students: =[
+        ("Oluchi Mordi", "ACC10211111", "Accounting", 300),
+        ("Adamu Aliyu", "ECO10110101", "Economics", 100),
+        ("Shania Bolade", "CSC10328828", "Computer", 200),
+        ("Adekunle Gold", "EEE11020202", "Electrical", 200),
+        ("Bianca Edemoh", "MEE10202001", "Mechanical", 100),
+    ];
 
-    // Here I am creating the file and pushing those contents into the file I created
-    let mut file = std::fs::File::create("Nigerian Breweries.csv").expect("unable to create CSV file");
-    file.write_all(drinks.as_bytes()).expect("Failed to write to file");
+    let mut file = File::create("Student_record.csv");
+        .expect("Could not create file");
+  
+    writeln!(file, "Name,Matric Number,Department,Level")
+        .expect("Failed to write header");
 
-    // At the end if it is successful it prints the message below
-    println!("Drinks Categories has been saved successfully!");
+    for student in &students {
+        writeln!(
+            file,
+            "{},{},{},{}",
+            student.0,
+            student.1,
+            student.2,
+            student.3
+        )
+        .expect("Failed to write student record");
+    }
 
-
+    println!("Student records have been saved successfully!");
 }

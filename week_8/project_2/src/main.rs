@@ -61,6 +61,10 @@ fn main() {
         if answer.trim().eq_ignore_ascii_case ("no"){
             break;
         }
+        else{
+            println!("input yes or no");
+            break;
+        }
         
     }
 
