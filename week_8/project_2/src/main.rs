@@ -71,7 +71,7 @@ fn main() {
     //I used the for loop to go through each of the applicants and display their information
     for applicants in &applicants{
         println!("\nName: {} {}\nExperience: {}years",applicants.0.trim(),applicants.1.trim(),applicants.2);
-        println!("Thank you for applying 👋\n");
+        println!("Thank you for applying 👋\n"); 
     }
 
     // This condition here is to display the person with highest years of experience
